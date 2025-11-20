@@ -18,9 +18,12 @@
         "name": "next"
       }
     ],
-    "baseUrl": ".",
+    "baseUrl": "src/",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["*"],
+      "@components/*": ["components/*"],
+      "@utils/*": ["lib/*"],
+      "@types/*": ["types/*"]
     }
   },
   "include": [
