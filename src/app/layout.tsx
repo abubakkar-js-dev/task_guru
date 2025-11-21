@@ -32,7 +32,9 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <main className="min-h-screen grow pt-16">{children}</main>
+            <main className="w-full grow min-h-screen pt-16">
+            {children}
+            </main>
           <Footer />
         </ThemeProvider>
       </body>

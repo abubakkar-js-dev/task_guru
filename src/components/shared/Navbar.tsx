@@ -9,6 +9,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  console.log("Current theme:", theme);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,8 +78,8 @@ export default function Navbar() {
               <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
             </Button>
-            <Button variant="ghost">Login</Button>
-            <Button>Sign Up</Button>
+            <Link href={"/login"} >Login</Link>
+            <Link href={"/register"}>Sign Up</Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -121,10 +122,10 @@ export default function Navbar() {
                 </Button>
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
-                <Button variant="ghost" className="w-full justify-start">
+                <Link href={"/login"} className="w-full justify-start">
                   Login
-                </Button>
-                <Button className="w-full">Sign Up</Button>
+                </Link>
+                <Link href={"/register"} className="w-full">Sign Up</Link>
               </div>
             </div>
           </div>
