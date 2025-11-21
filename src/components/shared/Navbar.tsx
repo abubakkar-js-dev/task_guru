@@ -1,11 +1,11 @@
-"use client"
-import { useState, useEffect, JSX } from "react";
+"use client";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-const Navbar = (): JSX.Element => {
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -44,7 +44,10 @@ const Navbar = (): JSX.Element => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <Link
+              href="/"
+              className="text-2xl font-bold bg-gradient-primary bg-clip-text"
+            >
               TaskFlow
             </Link>
           </div>
@@ -95,7 +98,11 @@ const Navbar = (): JSX.Element => {
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -105,16 +112,18 @@ const Navbar = (): JSX.Element => {
           <div className="md:hidden py-4 border-t border-border bg-background/95 backdrop-blur-md">
             <div className="flex flex-col space-y-4">
               {menuItems.map((item) => (
-                <button
+                <Button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className="text-foreground/80 hover:text-foreground transition-colors font-medium text-left px-2"
                 >
                   {item.label}
-                </button>
+                </Button>
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
-                <Button variant="ghost" className="w-full justify-start">Login</Button>
+                <Button variant="ghost" className="w-full justify-start">
+                  Login
+                </Button>
                 <Button className="w-full">Sign Up</Button>
               </div>
             </div>
@@ -123,6 +132,4 @@ const Navbar = (): JSX.Element => {
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}
