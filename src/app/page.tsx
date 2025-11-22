@@ -1,5 +1,7 @@
 import Features from "@/components/marketing/Features";
 import Hero from "@/components/marketing/Hero";
+import HowItWorks from "@/components/marketing/HowItWorks";
+import Testimonials from "@/components/marketing/Testimonials";
 import VideoPreview from "@/components/marketing/VideoPreview";
 
 export default function Home() {
@@ -11,6 +13,10 @@ export default function Home() {
         <VideoPreview />
         {/*  Feature Section */}
         <Features />
+        {/* How Its Works Section */}
+        <HowItWorks />
+        {/* Testimonials Section */}
+        <Testimonials />
     </div>
   );
 }
