@@ -1,6 +1,10 @@
+import Hero from "@/components/marketing/Hero";
 
 export default function Home() {
   return (
-    <div></div>
+    <div>
+        {/* Hero  */}
+        <Hero />
+    </div>
   );
 }
